@@ -1,0 +1,414 @@
+root@localhost:/home/admin# show version
+
+SONiC Software Version: SONiC.devpr_centec_master_20210913_v682.0-0e538300
+Distribution: Debian 10.10
+Kernel: 4.19.0-12-2-amd64
+Build commit: 0e538300
+Build date: Tue Sep 14 05:37:18 UTC 2021
+Built by: shil@vultr.guest
+
+Platform: x86_64-centec_v682_48y8c_d-r0
+HwSKU: V682-48y8c-d
+ASIC: centec
+ASIC Count: 1
+Serial Number: N/A
+Model Number: N/A
+Hardware Revision: N/A
+Uptime: 19:11:49 up 17 min,  1 user,  load average: 1.58, 1.26, 0.78
+
+Docker images:
+REPOSITORY                    TAG                                            IMAGE ID            SIZE
+docker-syncd-centec           devpr_centec_master_20210913_v682.0-0e538300   5ecc408b8cd4        473MB
+docker-syncd-centec           latest                                         5ecc408b8cd4        473MB
+docker-platform-monitor       devpr_centec_master_20210913_v682.0-0e538300   597b441b4e37        630MB
+docker-platform-monitor       latest                                         597b441b4e37        630MB
+docker-dhcp-relay             latest                                         fb738b0d5f1b        420MB
+docker-snmp                   devpr_centec_master_20210913_v682.0-0e538300   90205639da4d        455MB
+docker-snmp                   latest                                         90205639da4d        455MB
+docker-fpm-frr                devpr_centec_master_20210913_v682.0-0e538300   334d5ff69c13        443MB
+docker-fpm-frr                latest                                         334d5ff69c13        443MB
+docker-macsec                 devpr_centec_master_20210913_v682.0-0e538300   0c7f1beba6c7        428MB
+docker-macsec                 latest                                         0c7f1beba6c7        428MB
+docker-orchagent              devpr_centec_master_20210913_v682.0-0e538300   46e4215f1961        443MB
+docker-orchagent              latest                                         46e4215f1961        443MB
+docker-sflow                  devpr_centec_master_20210913_v682.0-0e538300   6818e7be6a2d        426MB
+docker-sflow                  latest                                         6818e7be6a2d        426MB
+docker-teamd                  devpr_centec_master_20210913_v682.0-0e538300   7588892e704b        425MB
+docker-teamd                  latest                                         7588892e704b        425MB
+docker-nat                    devpr_centec_master_20210913_v682.0-0e538300   6758d656841e        428MB
+docker-nat                    latest                                         6758d656841e        428MB
+docker-lldp                   devpr_centec_master_20210913_v682.0-0e538300   63f1d43c543c        453MB
+docker-lldp                   latest                                         63f1d43c543c        453MB
+docker-sonic-mgmt-framework   devpr_centec_master_20210913_v682.0-0e538300   a553c56af596        570MB
+docker-sonic-mgmt-framework   latest                                         a553c56af596        570MB
+docker-database               devpr_centec_master_20210913_v682.0-0e538300   a6caf02adc14        413MB
+docker-database               latest                                         a6caf02adc14        413MB
+docker-sonic-telemetry        devpr_centec_master_20210913_v682.0-0e538300   9000e09fc011        502MB
+docker-sonic-telemetry        latest                                         9000e09fc011        502MB
+docker-router-advertiser      devpr_centec_master_20210913_v682.0-0e538300   9c0ffe15f403        413MB
+docker-router-advertiser      latest                                         9c0ffe15f403        413MB
+
+root@localhost:/home/admin# show services
+mgmt-framework  docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  31028 22808 pts/0    Ss+  18:57   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          13  0.0  0.0 225856  3572 pts/0    Sl   18:57   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          17  0.4  1.4 1763460 114056 pts/0  Sl   18:57   0:03 /usr/sbin/rest_server -ui /rest_ui -logtostderr -cert /tmp/cert.pem -key /tmp/key.pem
+
+snmp    docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3  37080 25700 pts/0    Ss+  18:57   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root           9  0.0  0.2  33344 19828 pts/0    S    18:57   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name snmp
+root          17  0.0  0.0 225856  3592 pts/0    Sl   18:57   0:00 /usr/sbin/rsyslogd -n -iNONE
+Debian-+      21  0.0  0.1  32880 12480 pts/0    S    18:57   0:00 /usr/sbin/snmpd -f -LS4d -u Debian-snmp -g Debian-snmp -I -smux mteTrigger mteTriggerConf ifTable ifXTable inetCidrRouteTable ipCidrRouteTable ip disk_hw -p /run/snmpd.pid
+root          22  2.5  0.4 130900 34740 pts/0    Sl   18:57   0:21 python3 -m sonic_ax_impl
+
+telemetry       docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23912 pts/0    Ss+  18:57   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root           9  0.0  0.2  27644 18932 pts/0    S    18:57   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name telemetry
+root          12  0.0  0.0 225856  3468 pts/0    Sl   18:57   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          18  0.6  0.8 1691636 71932 pts/0   Sl   18:57   0:05 /usr/sbin/telemetry -logtostderr --noTLS --port 8080 --allow_no_client_auth -v=2
+root          48  0.6  0.8 1688892 69636 pts/0   Sl   18:57   0:05 /usr/sbin/dialout_client_cli -insecure -logtostderr -v 2
+
+dhcp_relay      docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23764 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          12  0.0  0.2  27644 18980 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name dhcp_relay
+root          15  0.0  0.0 225856  3464 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+
+radv    docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23752 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          12  0.0  0.2  27644 18944 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name radv
+root          16  0.0  0.0 225856  3596 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+
+lldp    docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23988 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          11  0.0  0.2  27644 19120 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name lldp
+root          14  0.0  0.0 225856  3548 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+_lldpd        22  0.0  0.0  30400  7768 pts/0    S    18:54   0:00 lldpd: monitor.
+_lldpd        24  0.0  0.0  30536  3912 pts/0    S    18:54   0:00 lldpd: connected to localhost.
+root          28  0.0  0.2 107220 21200 pts/0    Sl   18:54   0:00 python3 -m lldp_syncd
+root          32  0.0  0.2  36832 22768 pts/0    S    18:54   0:00 python3 /usr/bin/lldpmgrd
+
+syncd   docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23744 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          10  0.0  0.2  27644 19084 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name syncd
+root          13  0.0  0.0 225856  3552 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          17 55.0  0.9 1848924 80540 pts/0   Sl   18:54   9:34 /usr/bin/syncd -u -s -p /usr/share/sonic/hwsku/sai.profile
+
+teamd   docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32288 23968 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root           9  0.0  0.2  27644 19060 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name teamd
+root          15  0.0  0.0 225856  3532 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          19  0.0  0.0  88180  6888 pts/0    Sl   18:54   0:00 /usr/bin/teammgrd
+root          20  0.0  0.0  88036  5664 pts/0    Sl   18:54   0:00 /usr/bin/tlm_teamd
+root          23  0.0  0.0  81208  4816 pts/0    Sl   18:54   0:00 /usr/bin/teamsyncd
+
+swss    docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.2  0.3  32680 24392 pts/0    Ss+  18:54   0:02 /usr/bin/python3 /usr/local/bin/supervisord
+root          25  0.0  0.2  27648 19052 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name swss
+root          28  1.7  0.0 225856  5632 pts/0    Sl   18:54   0:18 /usr/sbin/rsyslogd -n -iNONE
+root          33  0.0  0.0  81224  5208 pts/0    Sl   18:54   0:00 /usr/bin/portsyncd
+root          42 17.0  0.2 400960 18744 pts/0    Sl   18:54   2:57 /usr/bin/orchagent -d /var/log/swss -b 8192 -s -m 74:fe:48:45:73:76
+root          65  0.0  0.0  88132  6832 pts/0    Sl   18:54   0:00 /usr/bin/coppmgrd
+root          78  0.0  0.0   3964  2980 pts/0    S    18:54   0:00 /bin/bash /usr/bin/arp_update
+root          79  0.0  0.0   3964  2868 pts/0    S    18:54   0:00 bash -c /usr/sbin/ndppd | /usr/bin/logger
+root          82  0.0  0.0  81088  4488 pts/0    Sl   18:54   0:00 /usr/bin/neighsyncd
+root          83  0.0  0.0   5668  1688 pts/0    S    18:54   0:00 /usr/sbin/ndppd
+root          84  0.0  0.0   5020  2720 pts/0    S    18:54   0:00 /usr/bin/logger
+root          85  0.0  0.1  88192  8308 pts/0    Sl   18:54   0:00 /usr/bin/vlanmgrd
+root          87  0.0  0.1  88188  8304 pts/0    Sl   18:54   0:00 /usr/bin/intfmgrd
+root          89  0.0  0.1  88156  8300 pts/0    Sl   18:54   0:00 /usr/bin/portmgrd
+root          90  0.0  0.1  88212  8196 pts/0    Sl   18:54   0:00 /usr/bin/buffermgrd -l /usr/share/sonic/hwsku/pg_profile_lookup.ini
+root          93  0.0  0.1  88176  8204 pts/0    Sl   18:54   0:00 /usr/bin/vrfmgrd
+root          99  0.0  0.0  87948  6904 pts/0    Sl   18:54   0:00 /usr/bin/nbrmgrd
+root         104  0.0  0.1  88208  8068 pts/0    Sl   18:54   0:00 /usr/bin/vxlanmgrd
+root         106  0.0  0.0  81132  4816 pts/0    Sl   18:54   0:00 /usr/bin/fdbsyncd
+root         114  0.0  0.0  88028  6852 pts/0    Sl   18:54   0:00 /usr/bin/tunnelmgrd
+root         758  0.0  0.0   2524   748 pts/0    S    19:09   0:00 sleep 300
+
+bgp     docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.3  32420 24264 pts/0    Ss+  18:54   0:01 /usr/bin/python3 /usr/local/bin/supervisord
+root          26  0.0  0.2  27648 19064 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name bgp
+root          29  0.0  0.0 225856  3544 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+frr           33  0.0  0.2 1104184 20520 pts/0   Sl   18:54   0:00 /usr/lib/frr/zebra -A 127.0.0.1 -s 90000000 -M fpm -M snmp
+frr           34  0.0  0.0  44068  6948 pts/0    S    18:54   0:00 /usr/lib/frr/bfdd -A 127.0.0.1
+frr           36  0.0  0.1  69184 14468 pts/0    S    18:54   0:00 /usr/lib/frr/ospfd -A 127.0.0.1 -M snmp
+frr           38  0.0  0.0  45328  7836 pts/0    S    18:54   0:00 /usr/lib/frr/pimd -A 127.0.0.1
+frr           50  0.0  0.0  44048  7124 pts/0    S    18:54   0:00 /usr/lib/frr/staticd -A 127.0.0.1
+frr           51  0.0  0.2 295000 18052 pts/0    Sl   18:54   0:00 /usr/lib/frr/bgpd -A 127.0.0.1 -M snmp
+root          53  0.0  0.1  21932 15340 pts/0    S    18:54   0:00 /usr/bin/python3 /usr/local/bin/bgpmon
+root          54  0.0  0.0  82148  4428 pts/0    Sl   18:54   0:00 fpmsyncd
+root          60  0.7  0.2 171628 19800 pts/0    Sl   18:54   0:08 /usr/bin/python3 /usr/local/bin/frrcfgd
+
+pmon    docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32296 24108 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          29  0.0  0.2  27656 19112 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name pmon
+root          32  0.0  0.0 225856  3520 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          37  0.0  0.2  37904 23696 pts/0    S    18:54   0:00 python3 /usr/local/bin/ledd
+root          38  0.0  0.3 116936 29540 pts/0    Sl   18:54   0:00 python3 /usr/local/bin/xcvrd
+root          40  1.3  0.2 117192 23140 pts/0    S    18:54   0:13 python3 /usr/local/bin/xcvrd
+
+database        docker
+---------------------------
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2  32028 23508 pts/0    Ss+  18:54   0:00 /usr/bin/python3 /usr/local/bin/supervisord
+root          33  0.0  0.2  27644 19088 pts/0    S    18:54   0:00 python3 /usr/bin/supervisor-proc-exit-listener --container-name database
+root          34  0.0  0.0 225856  3388 pts/0    Sl   18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root          35 13.6  0.3  92384 31540 pts/0    Sl   18:54   2:23 /usr/bin/redis-server 127.0.0.1:6379
+
+root@localhost:/home/admin# docker exec -it syncd bash
+root@localhost:/# ctc_shell
+CTC_CLI(ctc-sdk)#  show version
+    Copyright (C) 2005-2021 Centec Networks Inc.  All Rights Reserved.
+    ASIC Series          : Tsingma.MX
+    SDK Version          : V5.6.5
+    SDK Release Date     : 2021-06-30
+    SAI Version          : v1.8.1-0
+    SAI Release Date     : 2021-07-14
+    Build Commit         : 74682ca
+    Build Time           : 11:20:51, Sep 14 2021
+    Build By             : shil@linux
+CTC_CLI(ctc-sdk)# exit
+CTC_CLI# exit
+
+root@localhost:/# exit
+exit
+root@localhost:/home/admin# show platform ssdhealth
+Device Model : Lenovo SSD SL700 M.2 128G
+Health       : N/A
+Temperature  : N/A
+root@localhost:/home/admin# show platform summary
+Platform: x86_64-centec_v682_48y8c_d-r0
+HwSKU: V682-48y8c-d
+ASIC: centec
+ASIC Count: 1
+Serial Number: N/A
+Model Number: N/A
+Hardware Revision: N/A
+root@localhost:/home/admin# show interface status
+  Interface            Lanes    Speed    MTU    FEC     Alias    Vlan    Oper    Admin            Type    Asym PFC
+-----------  ---------------  -------  -----  -----  --------  ------  ------  -------  --------------  ----------
+  Ethernet0               32      10G   9100   none   eth-0-1   trunk      up       up  SFP/SFP+/SFP28         N/A
+  Ethernet1               33      10G   9100   none   eth-0-2   trunk      up       up  SFP/SFP+/SFP28         N/A
+  Ethernet2               34      25G   9100   none   eth-0-3   trunk    down       up             N/A         N/A
+  Ethernet3               35      25G   9100   none   eth-0-4   trunk    down       up             N/A         N/A
+  Ethernet4                0      25G   9100   none   eth-0-5   trunk    down       up             N/A         N/A
+  Ethernet5                4      25G   9100   none   eth-0-6   trunk    down       up             N/A         N/A
+  Ethernet6                8      25G   9100   none   eth-0-7   trunk    down       up             N/A         N/A
+  Ethernet7               12      25G   9100   none   eth-0-8   trunk    down       up             N/A         N/A
+  Ethernet8               16      25G   9100   none   eth-0-9   trunk    down       up             N/A         N/A
+  Ethernet9               20      25G   9100   none  eth-0-10   trunk    down       up             N/A         N/A
+ Ethernet10               24      25G   9100   none  eth-0-11   trunk    down       up             N/A         N/A
+ Ethernet11               28      25G   9100   none  eth-0-12   trunk    down       up             N/A         N/A
+ Ethernet12               40      25G   9100   none  eth-0-13   trunk    down       up             N/A         N/A
+ Ethernet13               44      25G   9100   none  eth-0-14   trunk    down       up             N/A         N/A
+ Ethernet14               48      25G   9100   none  eth-0-15   trunk    down       up             N/A         N/A
+ Ethernet15               52      25G   9100   none  eth-0-16   trunk    down       up             N/A         N/A
+ Ethernet16               56      25G   9100   none  eth-0-17   trunk    down       up             N/A         N/A
+ Ethernet17               60      25G   9100   none  eth-0-18   trunk    down       up             N/A         N/A
+ Ethernet18               64      25G   9100   none  eth-0-19   trunk    down       up             N/A         N/A
+ Ethernet19               68      25G   9100   none  eth-0-20   trunk    down       up             N/A         N/A
+ Ethernet20               72      25G   9100   none  eth-0-21   trunk    down       up             N/A         N/A
+ Ethernet21               73      25G   9100   none  eth-0-22   trunk    down       up             N/A         N/A
+ Ethernet22               74      25G   9100   none  eth-0-23   trunk    down       up             N/A         N/A
+ Ethernet23               75      25G   9100   none  eth-0-24   trunk    down       up             N/A         N/A
+ Ethernet24              232       1G   9100   none  eth-0-25  routed    down       up             N/A         N/A
+ Ethernet25              233       1G   9100   none  eth-0-26  routed    down       up             N/A         N/A
+ Ethernet26              234      25G   9100   none  eth-0-27   trunk    down       up             N/A         N/A
+ Ethernet27              235      25G   9100   none  eth-0-28   trunk    down       up             N/A         N/A
+ Ethernet28              200      25G   9100   none  eth-0-29   trunk    down       up             N/A         N/A
+ Ethernet29              204      25G   9100   none  eth-0-30   trunk    down       up             N/A         N/A
+ Ethernet30              208      25G   9100   none  eth-0-31   trunk    down       up             N/A         N/A
+ Ethernet31              212      25G   9100   none  eth-0-32   trunk    down       up             N/A         N/A
+ Ethernet32              216      25G   9100   none  eth-0-33   trunk    down       up             N/A         N/A
+ Ethernet33              220      25G   9100   none  eth-0-34   trunk    down       up             N/A         N/A
+ Ethernet34              224      25G   9100   none  eth-0-35   trunk    down       up             N/A         N/A
+ Ethernet35              228      25G   9100   none  eth-0-36   trunk    down       up             N/A         N/A
+ Ethernet36              160      25G   9100   none  eth-0-37   trunk    down       up             N/A         N/A
+ Ethernet37              164      25G   9100   none  eth-0-38   trunk    down       up             N/A         N/A
+ Ethernet38              168      25G   9100   none  eth-0-39   trunk    down       up             N/A         N/A
+ Ethernet39              172      25G   9100   none  eth-0-40   trunk    down       up             N/A         N/A
+ Ethernet40              176      25G   9100   none  eth-0-41   trunk    down       up             N/A         N/A
+ Ethernet41              180      25G   9100   none  eth-0-42   trunk    down       up             N/A         N/A
+ Ethernet42              184      25G   9100   none  eth-0-43   trunk    down       up             N/A         N/A
+ Ethernet43              188      25G   9100   none  eth-0-44   trunk    down       up             N/A         N/A
+ Ethernet44              192      25G   9100   none  eth-0-45   trunk    down       up             N/A         N/A
+ Ethernet45              193      25G   9100   none  eth-0-46   trunk    down       up             N/A         N/A
+ Ethernet46              194      25G   9100   none  eth-0-47   trunk    down       up             N/A         N/A
+ Ethernet47              195      25G   9100   none  eth-0-48   trunk    down       up             N/A         N/A
+ Ethernet48  120,121,122,123     100G   9100   none  eth-0-49   trunk    down       up             N/A         N/A
+ Ethernet49  124,125,126,127     100G   9100   none  eth-0-50   trunk    down       up             N/A         N/A
+ Ethernet50      80,81,82,83     100G   9100   none  eth-0-51   trunk    down       up             N/A         N/A
+ Ethernet51      84,85,86,87     100G   9100   none  eth-0-52   trunk    down       up             N/A         N/A
+ Ethernet52  240,241,242,243     100G   9100   none  eth-0-53   trunk    down       up             N/A         N/A
+ Ethernet53  244,245,246,247     100G   9100   none  eth-0-54   trunk    down       up             N/A         N/A
+ Ethernet54  280,281,282,283     100G   9100   none  eth-0-55   trunk    down       up             N/A         N/A
+ Ethernet55  284,285,286,287     100G   9100   none  eth-0-56   trunk    down       up             N/A         N/A
+root@localhost:/home/admin# show interface transceiver eeprom
+Ethernet0: SFP EEPROM detected
+        Application Advertisement: N/A
+        Connector: LC
+        Encoding: 64B/66B
+        Extended Identifier: GBIC/SFP defined by twowire interface ID
+        Extended RateSelect Compliance: Unspecified
+        Identifier: SFP/SFP+/SFP28
+        LengthOM3(UnitsOf10m): 30
+        Nominal Bit Rate(100Mbs): 103
+        Specification compliance:
+                10GEthernetComplianceCode: 10G Base-SR
+        Vendor Date Code(YYYY-MM-DD Lot): 2015-05-07
+        Vendor Name: OEM
+        Vendor OUI: 00-00-00
+        Vendor PN: SFP-10GB-SR
+        Vendor Rev:
+        Vendor SN: INFAS0171528
+
+Ethernet1: SFP EEPROM detected
+        Application Advertisement: N/A
+        Connector: LC
+        Encoding: 64B/66B
+        Extended Identifier: GBIC/SFP defined by twowire interface ID
+        Extended RateSelect Compliance: Unspecified
+        Identifier: SFP/SFP+/SFP28
+        LengthOM3(UnitsOf10m): 0
+        Nominal Bit Rate(100Mbs): 103
+        Specification compliance:
+                10GEthernetComplianceCode: 10G Base-SR
+                FibreChannelLinkLength: short distance (S)
+                FibreChannelTechnology: Shortwave laser w/o OFC (SN)
+                FibreChannelTransmissionMedia: Multimode, 50um (M5, M5E)
+        Vendor Date Code(YYYY-MM-DD Lot): 2020-09-04
+        Vendor Name: Centec
+        Vendor OUI: 24-00-00
+        Vendor PN: CENTEC#SFP+-8519
+        Vendor Rev: 1.0
+        Vendor SN: GM2009040831
+
+Ethernet2: SFP EEPROM Not detected
+
+Ethernet3: SFP EEPROM Not detected
+
+Ethernet4: SFP EEPROM Not detected
+
+Ethernet5: SFP EEPROM Not detected
+
+Ethernet6: SFP EEPROM Not detected
+
+Ethernet7: SFP EEPROM Not detected
+
+Ethernet8: SFP EEPROM Not detected
+
+Ethernet9: SFP EEPROM Not detected
+
+Ethernet10: SFP EEPROM Not detected
+
+Ethernet11: SFP EEPROM Not detected
+
+Ethernet12: SFP EEPROM Not detected
+
+Ethernet13: SFP EEPROM Not detected
+
+Ethernet14: SFP EEPROM Not detected
+
+Ethernet15: SFP EEPROM Not detected
+
+Ethernet16: SFP EEPROM Not detected
+
+Ethernet17: SFP EEPROM Not detected
+
+Ethernet18: SFP EEPROM Not detected
+
+Ethernet19: SFP EEPROM Not detected
+
+Ethernet20: SFP EEPROM Not detected
+
+Ethernet21: SFP EEPROM Not detected
+
+Ethernet22: SFP EEPROM Not detected
+
+Ethernet23: SFP EEPROM Not detected
+
+Ethernet24: SFP EEPROM Not detected
+
+Ethernet25: SFP EEPROM Not detected
+
+Ethernet26: SFP EEPROM Not detected
+
+Ethernet27: SFP EEPROM Not detected
+
+Ethernet28: SFP EEPROM Not detected
+
+Ethernet29: SFP EEPROM Not detected
+
+Ethernet30: SFP EEPROM Not detected
+
+Ethernet31: SFP EEPROM Not detected
+
+Ethernet32: SFP EEPROM Not detected
+
+Ethernet33: SFP EEPROM Not detected
+
+Ethernet34: SFP EEPROM Not detected
+
+Ethernet35: SFP EEPROM Not detected
+
+Ethernet36: SFP EEPROM Not detected
+
+Ethernet37: SFP EEPROM Not detected
+
+Ethernet38: SFP EEPROM Not detected
+
+Ethernet39: SFP EEPROM Not detected
+
+Ethernet40: SFP EEPROM Not detected
+
+Ethernet41: SFP EEPROM Not detected
+
+Ethernet42: SFP EEPROM Not detected
+
+Ethernet43: SFP EEPROM Not detected
+
+Ethernet44: SFP EEPROM Not detected
+
+Ethernet45: SFP EEPROM Not detected
+
+Ethernet46: SFP EEPROM Not detected
+
+Ethernet47: SFP EEPROM Not detected
+
+Ethernet48: SFP EEPROM Not detected
+
+Ethernet49: SFP EEPROM Not detected
+
+Ethernet50: SFP EEPROM Not detected
+
+Ethernet51: SFP EEPROM Not detected
+
+Ethernet52: SFP EEPROM Not detected
+
+Ethernet53: SFP EEPROM Not detected
+
+Ethernet54: SFP EEPROM Not detected
+
+Ethernet55: SFP EEPROM Not detected
+root@localhost:/home/admin#
