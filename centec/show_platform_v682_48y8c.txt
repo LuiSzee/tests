@@ -1,0 +1,166 @@
+root@localhost:/home/admin# show version
+
+SONiC Software Version: SONiC.shil_develop_20211123_v682.0-dirty-20211123.055128
+Distribution: Debian 11.1
+Kernel: 5.10.0-8-2-amd64
+Build commit: 1822ec736
+Build date: Tue Nov 23 07:41:57 UTC 2021
+Built by: shil@vultr
+
+Platform: x86_64-centec_v682_48y8c-r0
+HwSKU: V682-48y8c
+ASIC: centec
+ASIC Count: 1
+Serial Number: E661GD216003
+Model Number: N/A
+Hardware Revision: N/A
+Uptime: 11:13:56 up 1 min,  1 user,  load average: 0.86, 0.37, 0.14
+
+Docker images:
+REPOSITORY                    TAG                                                  IMAGE ID       SIZE
+docker-dhcp-relay             latest                                               10ea5b06432d   435MB
+docker-teamd                  latest                                               c14695a3c6a1   434MB
+docker-teamd                  shil_develop_20211123_v682.0-dirty-20211123.055128   c14695a3c6a1   434MB
+docker-syncd-centec           latest                                               0b99f5640fe0   479MB
+docker-syncd-centec           shil_develop_20211123_v682.0-dirty-20211123.055128   0b99f5640fe0   479MB
+docker-sonic-telemetry        latest                                               fe754415bd5e   510MB
+docker-sonic-telemetry        shil_develop_20211123_v682.0-dirty-20211123.055128   fe754415bd5e   510MB
+docker-sonic-mgmt-framework   latest                                               22ac93d8c4b9   577MB
+docker-sonic-mgmt-framework   shil_develop_20211123_v682.0-dirty-20211123.055128   22ac93d8c4b9   577MB
+docker-snmp                   latest                                               ba11ceb2ac12   464MB
+docker-snmp                   shil_develop_20211123_v682.0-dirty-20211123.055128   ba11ceb2ac12   464MB
+docker-sflow                  latest                                               a4696ab0caca   435MB
+docker-sflow                  shil_develop_20211123_v682.0-dirty-20211123.055128   a4696ab0caca   435MB
+docker-router-advertiser      latest                                               adcf7dd4ef69   422MB
+docker-router-advertiser      shil_develop_20211123_v682.0-dirty-20211123.055128   adcf7dd4ef69   422MB
+docker-platform-monitor       latest                                               448e88e48972   687MB
+docker-platform-monitor       shil_develop_20211123_v682.0-dirty-20211123.055128   448e88e48972   687MB
+docker-orchagent              latest                                               d471c54e916e   453MB
+docker-orchagent              shil_develop_20211123_v682.0-dirty-20211123.055128   d471c54e916e   453MB
+docker-nat                    latest                                               f85ca531c691   437MB
+docker-nat                    shil_develop_20211123_v682.0-dirty-20211123.055128   f85ca531c691   437MB
+docker-mux                    latest                                               8c906323e5f8   474MB
+docker-mux                    shil_develop_20211123_v682.0-dirty-20211123.055128   8c906323e5f8   474MB
+docker-macsec                 latest                                               94e26a5947e0   438MB
+docker-macsec                 shil_develop_20211123_v682.0-dirty-20211123.055128   94e26a5947e0   438MB
+docker-lldp                   latest                                               1c2545c93d53   462MB
+docker-lldp                   shil_develop_20211123_v682.0-dirty-20211123.055128   1c2545c93d53   462MB
+docker-fpm-frr                latest                                               ab66693de9c5   453MB
+docker-fpm-frr                shil_develop_20211123_v682.0-dirty-20211123.055128   ab66693de9c5   453MB
+docker-database               latest                                               c32246b1b916   422MB
+docker-database               shil_develop_20211123_v682.0-dirty-20211123.055128   c32246b1b916   422MB
+
+root@localhost:/home/admin# show platform summary
+Platform: x86_64-centec_v682_48y8c-r0
+HwSKU: V682-48y8c
+ASIC: centec
+ASIC Count: 1
+Serial Number: E661GD216003
+Model Number: N/A
+Hardware Revision: N/A
+root@localhost:/home/admin# show platform fan
+  Drawer    LED      FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  -------  -------  -----------  ----------  --------  -----------------
+FanTray1    N/A  FAN-1-1   124RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray1    N/A  FAN-1-2   105RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray1    N/A  FAN-1-3   127RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray1    N/A  FAN-1-4   104RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray2    N/A  FAN-2-1   125RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray2    N/A  FAN-2-2   105RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray2    N/A  FAN-2-3   129RPM      exhaust     Present        OK  20211201 11:12:56
+FanTray2    N/A  FAN-2-4   102RPM      exhaust     Present        OK  20211201 11:12:56
+root@localhost:/home/admin# show platform temperature
+  Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+--------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+    ASIC           22.5        112       N/A             N/A            N/A      False  20211201 11:12:56
+root@localhost:/home/admin# show platform psustatus
+PSU    Model    Serial    HW Rev    Voltage (V)    Current (A)    Power (W)    Status    LED
+-----  -------  --------  --------  -------------  -------------  -----------  --------  -----
+PSU 1  N/A      N/A       N/A       N/A            N/A            N/A          OK        N/A
+PSU 2  N/A      N/A       N/A       N/A            N/A            N/A          NOT OK    N/A
+root@localhost:/home/admin# show interface status
+  Interface            Lanes    Speed    MTU    FEC     Alias    Vlan    Oper    Admin    Type    Asym PFC
+-----------  ---------------  -------  -----  -----  --------  ------  ------  -------  ------  ----------
+  Ethernet0               32      25G   9100   none   eth-0-1   trunk    down       up     N/A         N/A
+  Ethernet1               33      25G   9100   none   eth-0-2   trunk    down       up     N/A         N/A
+  Ethernet2               34      25G   9100   none   eth-0-3   trunk    down       up     N/A         N/A
+  Ethernet3               35      25G   9100   none   eth-0-4   trunk    down       up     N/A         N/A
+  Ethernet4                0      25G   9100   none   eth-0-5   trunk    down       up     N/A         N/A
+  Ethernet5                4      25G   9100   none   eth-0-6   trunk    down       up     N/A         N/A
+  Ethernet6                8      25G   9100   none   eth-0-7   trunk    down       up     N/A         N/A
+  Ethernet7               12      25G   9100   none   eth-0-8   trunk    down       up     N/A         N/A
+  Ethernet8               16      25G   9100   none   eth-0-9   trunk    down       up     N/A         N/A
+  Ethernet9               20      25G   9100   none  eth-0-10   trunk    down       up     N/A         N/A
+ Ethernet10               24      25G   9100   none  eth-0-11   trunk    down       up     N/A         N/A
+ Ethernet11               28      25G   9100   none  eth-0-12   trunk    down       up     N/A         N/A
+ Ethernet12               40      25G   9100   none  eth-0-13   trunk    down       up     N/A         N/A
+ Ethernet13               44      25G   9100   none  eth-0-14   trunk    down       up     N/A         N/A
+ Ethernet14               48      25G   9100   none  eth-0-15   trunk    down       up     N/A         N/A
+ Ethernet15               52      25G   9100   none  eth-0-16   trunk    down       up     N/A         N/A
+ Ethernet16               56      25G   9100   none  eth-0-17   trunk    down       up     N/A         N/A
+ Ethernet17               60      25G   9100   none  eth-0-18   trunk    down       up     N/A         N/A
+ Ethernet18               64      25G   9100   none  eth-0-19   trunk    down       up     N/A         N/A
+ Ethernet19               68      25G   9100   none  eth-0-20   trunk    down       up     N/A         N/A
+ Ethernet20               72      25G   9100   none  eth-0-21   trunk    down       up     N/A         N/A
+ Ethernet21               73      25G   9100   none  eth-0-22   trunk    down       up     N/A         N/A
+ Ethernet22               74      25G   9100   none  eth-0-23   trunk    down       up     N/A         N/A
+ Ethernet23               75      25G   9100   none  eth-0-24   trunk    down       up     N/A         N/A
+ Ethernet24              232      25G   9100   none  eth-0-25   trunk    down       up     N/A         N/A
+ Ethernet25              233      25G   9100   none  eth-0-26   trunk    down       up     N/A         N/A
+ Ethernet26              234      25G   9100   none  eth-0-27   trunk    down       up     N/A         N/A
+ Ethernet27              235      25G   9100   none  eth-0-28   trunk    down       up     N/A         N/A
+ Ethernet28              200      25G   9100   none  eth-0-29   trunk    down       up     N/A         N/A
+ Ethernet29              204      25G   9100   none  eth-0-30   trunk    down       up     N/A         N/A
+ Ethernet30              208      25G   9100   none  eth-0-31   trunk    down       up     N/A         N/A
+ Ethernet31              212      25G   9100   none  eth-0-32   trunk    down       up     N/A         N/A
+ Ethernet32              216      25G   9100   none  eth-0-33   trunk    down       up     N/A         N/A
+ Ethernet33              220      25G   9100   none  eth-0-34   trunk    down       up     N/A         N/A
+ Ethernet34              224      25G   9100   none  eth-0-35   trunk    down       up     N/A         N/A
+ Ethernet35              228      25G   9100   none  eth-0-36   trunk    down       up     N/A         N/A
+ Ethernet36              160      25G   9100   none  eth-0-37   trunk    down       up     N/A         N/A
+ Ethernet37              164      25G   9100   none  eth-0-38   trunk    down       up     N/A         N/A
+ Ethernet38              168      25G   9100   none  eth-0-39   trunk    down       up     N/A         N/A
+ Ethernet39              172      25G   9100   none  eth-0-40   trunk    down       up     N/A         N/A
+ Ethernet40              176      25G   9100   none  eth-0-41   trunk    down       up     N/A         N/A
+ Ethernet41              180      25G   9100   none  eth-0-42   trunk    down       up     N/A         N/A
+ Ethernet42              184      25G   9100   none  eth-0-43   trunk    down       up     N/A         N/A
+ Ethernet43              188      25G   9100   none  eth-0-44   trunk    down       up     N/A         N/A
+ Ethernet44              192      25G   9100   none  eth-0-45   trunk    down       up     N/A         N/A
+ Ethernet45              193      25G   9100   none  eth-0-46   trunk    down       up     N/A         N/A
+ Ethernet46              194      25G   9100   none  eth-0-47   trunk    down       up     N/A         N/A
+ Ethernet47              195      25G   9100   none  eth-0-48   trunk    down       up     N/A         N/A
+ Ethernet48  120,121,122,123     100G   9100   none  eth-0-49   trunk    down       up     N/A         N/A
+ Ethernet49  124,125,126,127     100G   9100   none  eth-0-50   trunk    down       up     N/A         N/A
+ Ethernet50      80,81,82,83     100G   9100   none  eth-0-51   trunk    down       up     N/A         N/A
+ Ethernet51      84,85,86,87     100G   9100   none  eth-0-52   trunk    down       up     N/A         N/A
+ Ethernet52  240,241,242,243     100G   9100   none  eth-0-53   trunk    down       up     N/A         N/A
+ Ethernet53  244,245,246,247     100G   9100   none  eth-0-54   trunk    down       up     N/A         N/A
+ Ethernet54  280,281,282,283     100G   9100   none  eth-0-55   trunk    down       up     N/A         N/A
+ Ethernet55  284,285,286,287     100G   9100   none  eth-0-56   trunk    down       up     N/A         N/A
+root@localhost:/home/admin# docker ps --all
+CONTAINER ID   IMAGE                                COMMAND                  CREATED             STATUS          PORTS     NAMES
+68bd0710771b   docker-snmp:latest                   "/usr/local/bin/supe…"   About an hour ago   Up 38 seconds             snmp
+72fa5c88c917   docker-sonic-telemetry:latest        "/usr/local/bin/supe…"   About an hour ago   Up 39 seconds             telemetry
+a3a9e6418cd2   docker-sonic-mgmt-framework:latest   "/usr/local/bin/supe…"   About an hour ago   Up 39 seconds             mgmt-framework
+04377295ddd9   10ea5b06432d                         "/usr/bin/docker_ini…"   About an hour ago   Up 4 minutes              dhcp_relay
+783e0de55c05   docker-router-advertiser:latest      "/usr/bin/docker-ini…"   About an hour ago   Up 4 minutes              radv
+07294b8dae21   docker-lldp:latest                   "/usr/bin/docker-lld…"   About an hour ago   Up 4 minutes              lldp
+df7f6d924f4d   docker-syncd-centec:latest           "/usr/local/bin/supe…"   About an hour ago   Up 4 minutes              syncd
+3ad919517d8d   docker-teamd:latest                  "/usr/local/bin/supe…"   About an hour ago   Up 4 minutes              teamd
+8f33afe13f8f   docker-orchagent:latest              "/usr/bin/docker-ini…"   About an hour ago   Up 4 minutes              swss
+c9f5c673a3a2   docker-fpm-frr:latest                "/usr/bin/docker_ini…"   About an hour ago   Up 4 months               bgp
+ed54a2367689   docker-platform-monitor:latest       "/usr/bin/docker_ini…"   About an hour ago   Up 4 months               pmon
+b0b513996f4d   docker-database:latest               "/usr/local/bin/dock…"   About an hour ago   Up 4 months               database
+root@localhost:/home/admin# docker exec pmon supervisorctl status
+chassis_db_init                  FATAL     Exited too quickly (process log may have details)
+dependent-startup                EXITED    Dec 01 11:13 AM
+fancontrol                       RUNNING   pid 34, uptime 0:02:08
+ledd                             RUNNING   pid 38, uptime 0:02:08
+pcied                            RUNNING   pid 70, uptime 0:02:08
+psud                             RUNNING   pid 52, uptime 0:02:08
+rsyslogd                         RUNNING   pid 29, uptime 0:02:11
+supervisor-proc-exit-listener    RUNNING   pid 20, uptime 0:02:12
+syseepromd                       RUNNING   pid 59, uptime 0:02:08
+thermalctld                      RUNNING   pid 66, uptime 0:02:08
+xcvrd                            RUNNING   pid 45, uptime 0:02:08
+root@localhost:/home/admin#

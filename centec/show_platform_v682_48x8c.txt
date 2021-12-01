@@ -1,10 +1,10 @@
 root@localhost:/home/admin# show version
 
-SONiC Software Version: SONiC.shil_develop_20211117_v682.0-dirty-20211122.081528
+SONiC Software Version: SONiC.shil_develop_20211123_v682.0-dirty-20211123.055128
 Distribution: Debian 11.1
 Kernel: 5.10.0-8-2-amd64
-Build commit: 83a6dc0b4
-Build date: Mon Nov 22 08:20:40 UTC 2021
+Build commit: 1822ec736
+Build date: Tue Nov 23 07:41:57 UTC 2021
 Built by: shil@vultr
 
 Platform: x86_64-centec_v682_48x8c-r0
@@ -14,41 +14,41 @@ ASIC Count: 1
 Serial Number: E661GD216000
 Model Number: N/A
 Hardware Revision: N/A
-Uptime: 20:40:46 up 48 min,  1 user,  load average: 0.14, 0.21, 0.41
+Uptime: 13:22:35 up 5 min,  2 users,  load average: 1.33, 0.97, 0.45
 
 Docker images:
 REPOSITORY                    TAG                                                  IMAGE ID       SIZE
-docker-dhcp-relay             latest                                               8fc44f213147   435MB
-docker-teamd                  latest                                               bf5fb8dbb5e1   434MB
-docker-teamd                  shil_develop_20211117_v682.0-dirty-20211122.081528   bf5fb8dbb5e1   434MB
-docker-syncd-centec           latest                                               514c78bdde5a   479MB
-docker-syncd-centec           shil_develop_20211117_v682.0-dirty-20211122.081528   514c78bdde5a   479MB
-docker-sonic-telemetry        latest                                               ad5460798b06   510MB
-docker-sonic-telemetry        shil_develop_20211117_v682.0-dirty-20211122.081528   ad5460798b06   510MB
-docker-sonic-mgmt-framework   latest                                               3ef4225aabe1   577MB
-docker-sonic-mgmt-framework   shil_develop_20211117_v682.0-dirty-20211122.081528   3ef4225aabe1   577MB
-docker-snmp                   latest                                               4aead86c6fef   464MB
-docker-snmp                   shil_develop_20211117_v682.0-dirty-20211122.081528   4aead86c6fef   464MB
-docker-sflow                  latest                                               53a7e357df50   435MB
-docker-sflow                  shil_develop_20211117_v682.0-dirty-20211122.081528   53a7e357df50   435MB
-docker-router-advertiser      latest                                               5311bd40b6bd   422MB
-docker-router-advertiser      shil_develop_20211117_v682.0-dirty-20211122.081528   5311bd40b6bd   422MB
-docker-platform-monitor       latest                                               31caa0ba7355   687MB
-docker-platform-monitor       shil_develop_20211117_v682.0-dirty-20211122.081528   31caa0ba7355   687MB
-docker-orchagent              latest                                               0e2d9a9f6dda   453MB
-docker-orchagent              shil_develop_20211117_v682.0-dirty-20211122.081528   0e2d9a9f6dda   453MB
-docker-nat                    latest                                               1e392c69102b   437MB
-docker-nat                    shil_develop_20211117_v682.0-dirty-20211122.081528   1e392c69102b   437MB
-docker-mux                    latest                                               f10c0a1230a0   474MB
-docker-mux                    shil_develop_20211117_v682.0-dirty-20211122.081528   f10c0a1230a0   474MB
-docker-macsec                 latest                                               47004f26a7e7   438MB
-docker-macsec                 shil_develop_20211117_v682.0-dirty-20211122.081528   47004f26a7e7   438MB
-docker-lldp                   latest                                               1ba3181fbe59   462MB
-docker-lldp                   shil_develop_20211117_v682.0-dirty-20211122.081528   1ba3181fbe59   462MB
-docker-fpm-frr                latest                                               7ae6549031da   453MB
-docker-fpm-frr                shil_develop_20211117_v682.0-dirty-20211122.081528   7ae6549031da   453MB
-docker-database               latest                                               c58cdef097ce   422MB
-docker-database               shil_develop_20211117_v682.0-dirty-20211122.081528   c58cdef097ce   422MB
+docker-dhcp-relay             latest                                               10ea5b06432d   435MB
+docker-teamd                  latest                                               c14695a3c6a1   434MB
+docker-teamd                  shil_develop_20211123_v682.0-dirty-20211123.055128   c14695a3c6a1   434MB
+docker-syncd-centec           latest                                               0b99f5640fe0   479MB
+docker-syncd-centec           shil_develop_20211123_v682.0-dirty-20211123.055128   0b99f5640fe0   479MB
+docker-sonic-telemetry        latest                                               fe754415bd5e   510MB
+docker-sonic-telemetry        shil_develop_20211123_v682.0-dirty-20211123.055128   fe754415bd5e   510MB
+docker-sonic-mgmt-framework   latest                                               22ac93d8c4b9   577MB
+docker-sonic-mgmt-framework   shil_develop_20211123_v682.0-dirty-20211123.055128   22ac93d8c4b9   577MB
+docker-snmp                   latest                                               ba11ceb2ac12   464MB
+docker-snmp                   shil_develop_20211123_v682.0-dirty-20211123.055128   ba11ceb2ac12   464MB
+docker-sflow                  latest                                               a4696ab0caca   435MB
+docker-sflow                  shil_develop_20211123_v682.0-dirty-20211123.055128   a4696ab0caca   435MB
+docker-router-advertiser      latest                                               adcf7dd4ef69   422MB
+docker-router-advertiser      shil_develop_20211123_v682.0-dirty-20211123.055128   adcf7dd4ef69   422MB
+docker-platform-monitor       latest                                               448e88e48972   687MB
+docker-platform-monitor       shil_develop_20211123_v682.0-dirty-20211123.055128   448e88e48972   687MB
+docker-orchagent              latest                                               d471c54e916e   453MB
+docker-orchagent              shil_develop_20211123_v682.0-dirty-20211123.055128   d471c54e916e   453MB
+docker-nat                    latest                                               f85ca531c691   437MB
+docker-nat                    shil_develop_20211123_v682.0-dirty-20211123.055128   f85ca531c691   437MB
+docker-mux                    latest                                               8c906323e5f8   474MB
+docker-mux                    shil_develop_20211123_v682.0-dirty-20211123.055128   8c906323e5f8   474MB
+docker-macsec                 latest                                               94e26a5947e0   438MB
+docker-macsec                 shil_develop_20211123_v682.0-dirty-20211123.055128   94e26a5947e0   438MB
+docker-lldp                   latest                                               1c2545c93d53   462MB
+docker-lldp                   shil_develop_20211123_v682.0-dirty-20211123.055128   1c2545c93d53   462MB
+docker-fpm-frr                latest                                               ab66693de9c5   453MB
+docker-fpm-frr                shil_develop_20211123_v682.0-dirty-20211123.055128   ab66693de9c5   453MB
+docker-database               latest                                               c32246b1b916   422MB
+docker-database               shil_develop_20211123_v682.0-dirty-20211123.055128   c32246b1b916   422MB
 
 root@localhost:/home/admin# show platform summary
 Platform: x86_64-centec_v682_48x8c-r0
@@ -61,24 +61,24 @@ Hardware Revision: N/A
 root@localhost:/home/admin# show platform fan
   Drawer    LED      FAN    Speed    Direction    Presence    Status          Timestamp
 --------  -----  -------  -------  -----------  ----------  --------  -----------------
-FanTray1    N/A  FAN-1-1   124RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray1    N/A  FAN-1-2   105RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray1    N/A  FAN-1-3   127RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray1    N/A  FAN-1-4   104RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray2    N/A  FAN-2-1   125RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray2    N/A  FAN-2-2   104RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray2    N/A  FAN-2-3   130RPM      exhaust     Present        OK  20211122 19:52:55
-FanTray2    N/A  FAN-2-4   102RPM      exhaust     Present        OK  20211122 19:52:55
+FanTray1    N/A  FAN-1-1   125RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray1    N/A  FAN-1-2   105RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray1    N/A  FAN-1-3   127RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray1    N/A  FAN-1-4   104RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray2    N/A  FAN-2-1   125RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray2    N/A  FAN-2-2   104RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray2    N/A  FAN-2-3   130RPM      exhaust     Present        OK  20211201 13:17:39
+FanTray2    N/A  FAN-2-4   102RPM      exhaust     Present        OK  20211201 13:17:39
 root@localhost:/home/admin# show platform temperature
   Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
 --------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
-    ASIC             22        112       N/A             N/A            N/A      False  20211122 19:52:55
+    ASIC           23.5        112       N/A             N/A            N/A      False  20211201 13:17:39
 root@localhost:/home/admin# show platform psustatus
 PSU    Model    Serial    HW Rev    Voltage (V)    Current (A)    Power (W)    Status    LED
 -----  -------  --------  --------  -------------  -------------  -----------  --------  -----
 PSU 1  N/A      N/A       N/A       N/A            N/A            N/A          OK        N/A
 PSU 2  N/A      N/A       N/A       N/A            N/A            N/A          NOT OK    N/A
-root@localhost:/home/admin# show interfaces status
+root@localhost:/home/admin# show interface status
   Interface            Lanes    Speed    MTU    FEC     Alias    Vlan    Oper    Admin    Type    Asym PFC
 -----------  ---------------  -------  -----  -----  --------  ------  ------  -------  ------  ----------
   Ethernet0               32      10G   9100   none   eth-0-1   trunk    down       up     N/A         N/A
@@ -138,17 +138,29 @@ root@localhost:/home/admin# show interfaces status
  Ethernet54  280,281,282,283     100G   9100   none  eth-0-55   trunk    down       up     N/A         N/A
  Ethernet55  284,285,286,287     100G   9100   none  eth-0-56   trunk    down       up     N/A         N/A
 root@localhost:/home/admin# docker ps --all
-CONTAINER ID   IMAGE                                COMMAND                  CREATED       STATUS          PORTS     NAMES
-815b57928a08   docker-sonic-telemetry:latest        "/usr/local/bin/supe…"   4 hours ago   Up 46 minutes             telemetry
-b9d7835a1ccc   docker-snmp:latest                   "/usr/local/bin/supe…"   4 hours ago   Up 46 minutes             snmp
-4156e4460980   docker-sonic-mgmt-framework:latest   "/usr/local/bin/supe…"   4 hours ago   Up 46 minutes             mgmt-framework
-808b4a713d21   8fc44f213147                         "/usr/bin/docker_ini…"   4 hours ago   Up 49 minutes             dhcp_relay
-e785dfeb2550   docker-router-advertiser:latest      "/usr/bin/docker-ini…"   4 hours ago   Up 49 minutes             radv
-7203d3f296f0   docker-lldp:latest                   "/usr/bin/docker-lld…"   4 hours ago   Up 49 minutes             lldp
-b892a2148995   docker-syncd-centec:latest           "/usr/local/bin/supe…"   4 hours ago   Up 49 minutes             syncd
-6950f906f797   docker-teamd:latest                  "/usr/local/bin/supe…"   4 hours ago   Up 49 minutes             teamd
-69ba43cbcf85   docker-orchagent:latest              "/usr/bin/docker-ini…"   4 hours ago   Up 49 minutes             swss
-8abc2adf2370   docker-fpm-frr:latest                "/usr/bin/docker_ini…"   4 hours ago   Up 4 months               bgp
-58b7a2636007   docker-platform-monitor:latest       "/usr/bin/docker_ini…"   4 hours ago   Up 4 months               pmon
-31ffda91e1f5   docker-database:latest               "/usr/local/bin/dock…"   4 hours ago   Up 4 months               database
+CONTAINER ID   IMAGE                                COMMAND                  CREATED       STATUS         PORTS     NAMES
+6d6421a498d6   docker-sonic-mgmt-framework:latest   "/usr/local/bin/supe…"   2 hours ago   Up 2 minutes             mgmt-framework
+cb129aa5a6a4   docker-snmp:latest                   "/usr/local/bin/supe…"   2 hours ago   Up 2 minutes             snmp
+e458b3737218   docker-sonic-telemetry:latest        "/usr/local/bin/supe…"   2 hours ago   Up 2 minutes             telemetry
+a71a2657f1ff   10ea5b06432d                         "/usr/bin/docker_ini…"   2 hours ago   Up 6 minutes             dhcp_relay
+13cceac74631   docker-router-advertiser:latest      "/usr/bin/docker-ini…"   2 hours ago   Up 6 minutes             radv
+e12e42baf644   docker-lldp:latest                   "/usr/bin/docker-lld…"   2 hours ago   Up 6 minutes             lldp
+bbb7cb0aeba8   docker-syncd-centec:latest           "/usr/local/bin/supe…"   2 hours ago   Up 6 minutes             syncd
+f298c3077879   docker-teamd:latest                  "/usr/local/bin/supe…"   2 hours ago   Up 6 minutes             teamd
+c1a7aa1c9b7f   docker-orchagent:latest              "/usr/bin/docker-ini…"   2 hours ago   Up 6 minutes             swss
+ebcc1c68a6d2   docker-fpm-frr:latest                "/usr/bin/docker_ini…"   2 hours ago   Up 4 months              bgp
+40d5263fabce   docker-platform-monitor:latest       "/usr/bin/docker_ini…"   2 hours ago   Up 4 months              pmon
+326e3f55f23d   docker-database:latest               "/usr/local/bin/dock…"   2 hours ago   Up 4 months              database
+root@localhost:/home/admin# docker exec pmon supervisorctl status
+chassis_db_init                  FATAL     Exited too quickly (process log may have details)
+dependent-startup                EXITED    Dec 01 01:17 PM
+fancontrol                       RUNNING   pid 34, uptime 0:06:24
+ledd                             RUNNING   pid 35, uptime 0:06:24
+pcied                            RUNNING   pid 75, uptime 0:06:24
+psud                             RUNNING   pid 49, uptime 0:06:24
+rsyslogd                         RUNNING   pid 29, uptime 0:06:26
+supervisor-proc-exit-listener    RUNNING   pid 26, uptime 0:06:27
+syseepromd                       RUNNING   pid 55, uptime 0:06:24
+thermalctld                      RUNNING   pid 69, uptime 0:06:24
+xcvrd                            RUNNING   pid 42, uptime 0:06:24
 root@localhost:/home/admin#
